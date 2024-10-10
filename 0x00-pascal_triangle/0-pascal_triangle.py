@@ -3,6 +3,7 @@
 This module defines a function to generate Pascal's triangle.
 """
 
+
 def pascal_triangle(n):
     """
     Generate Pascal's triangle up to the nth row.
@@ -17,7 +18,7 @@ def pascal_triangle(n):
         return []
 
     triangle = [[1]]  # Initialize the first row
-    
+
     for i in range(1, n):
         row = [1]  # First element of each row is always 1
         for j in range(1, len(triangle[-1])):
@@ -25,5 +26,5 @@ def pascal_triangle(n):
             row.append(triangle[-1][j - 1] + triangle[-1][j])
         row.append(1)  # Last element of each row is always 1
         triangle.append(row)
-    
+
     return triangle

@@ -20,7 +20,7 @@ def pascal_triangle(n):
     triangle = [[1]]  # Initialize the first row
 
     for i in range(1, n):
-        row = [1]  # First element of each row is always 1
+        row = [1]
         for j in range(1, len(triangle[-1])):
             # Append the sum of two elements above the current position
             row.append(triangle[-1][j - 1] + triangle[-1][j])

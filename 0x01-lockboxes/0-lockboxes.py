@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def canUnlockAll(boxes):
     # Initialize a set to track boxes that can be opened
     opened_boxes = {0}  # The first box (0) is already unlocked

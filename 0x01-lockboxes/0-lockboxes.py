@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+
+"""
+This module provides a function to determine if all locked boxes can be unlocked.
+
+The boxes are numbered from 0 to n-1, where n is the total number of boxes.
+Each box may contain keys to other boxes, and the goal is to determine if all
+boxes can be accessed given the keys.
+"""
+
 def canUnlockAll(boxes):
     # Initialize a set to track boxes that can be opened
     opened_boxes = {0}  # The first box (0) is already unlocked

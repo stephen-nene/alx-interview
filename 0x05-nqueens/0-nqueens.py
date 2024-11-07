@@ -1,52 +1,54 @@
 #!/usr/bin/python3
-import sys
-
 """
 N queens puzzle challenge
 """
 
-def print_board(board):
-    """Function to print the solution in the required format."""
-    print(board)
+import sys
 
-def is_valid(board, row, col):
-    """Check if placing a queen at (row, col) is valid."""
-    for i in range(row):
-        if board[i][1] == col or \
-           board[i][1] - i == col - row or \
-           board[i][1] + i == col + row:
+if len(sys.argv) != 2:
+    print('Usage: nqueens N')
+    exit(1)
+
+try:
+    n_q = int(sys.argv[1])
+except ValueError:
+    print('N must be a number')
+    exit(1)
+
+if n_q < 4:
+    print('N must be at least 4')
+    exit(1)
+
+
+def solve_nqueens(n):
+    """ self explanatory """
+    if n == 0:
+        return [[]]
+    inner_solution = solve_nqueens(n - 1)
+    return [solution + [(n, i + 1)]
+            for i in range(n_q)
+            for solution in inner_solution
+            if safe_queen((n, i + 1), solution)]
+
+
+def attack_queen(square, queen):
+    """ self explanatory """
+    (row1, col1) = square
+    (row2, col2) = queen
+    return (row1 == row2) or (col1 == col2) or\
+        abs(row1 - row2) == abs(col1 - col2)
+
+
+def safe_queen(sqr, queens):
+    """ self explanatory """
+    for queen in queens:
+        if attack_queen(sqr, queen):
             return False
     return True
 
-def solve_nqueens(N, row, board):
-    """Backtracking algorithm to solve N Queens problem."""
-    if row == N:
-        print_board(board)
-        return
-    for col in range(N):
-        if is_valid(board, row, col):
-            board.append([row, col])
-            solve_nqueens(N, row + 1, board)
-            board.pop()
 
-def main():
-    """Main function to handle input and solve the N Queens problem."""
-    if len(sys.argv) != 2:
-        print("Usage: nqueens N")
-        sys.exit(1)
-
-    try:
-        N = int(sys.argv[1])
-    except ValueError:
-        print("N must be a number")
-        sys.exit(1)
-
-    if N < 4:
-        print("N must be at least 4")
-        sys.exit(1)
-
-    # Solve the N queens problem starting from row 0
-    solve_nqueens(N, 0, [])
-
-if __name__ == "__main__":
-    main()
+for answer in reversed(solve_nqueens(n_q)):
+    result = []
+    for p in [list(p) for p in answer]:
+        result.append([i - 1 for i in p])
+    print(result)

@@ -3,6 +3,15 @@
 
 
 
+# Tasks
+1. [0x00-pascal_triangle](./0x00-pascal_triangle/)
+2. [0x01-lockboxes](./0x01-lockboxes/)
+3. [0x02-minimum_operations](./0x02-minimum_operations/)
+4. [0x03-log_parsing](./0x03-log_parsing/)
+5. [0x04-utf8_validation](./0x04-utf8_validation/)
+6. [0x05-nqueens](./0x05-nqueens/)
+
+
 
 
 # [![BuiltBy](https://img.shields.io/badge/Built-By-GE7A10?style=flat-square&logo=BuzzFeed&logoColor=white)](https://github.com/stephen-nene)

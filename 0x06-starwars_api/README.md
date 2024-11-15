@@ -1,13 +1,20 @@
-![](https://camo.githubusercontent.com/018f622cccf3a7439c62404c484dc9fe1bfc54c5107887675e2a75e1a235646a/68747470733a2f2f6173736574732e696d6167696e61626c65667574757265732e636f6d2f6d656469612f696d616765732f414c585f4c6f676f2e6d61782d323030783135302e706e67)
-# alx-interview
+# 0x06. Star Wars API
 
 
 
-# Tasks
+# Tools
 [![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
 
 
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
+
+# Tasks
+- Write a script that prints all characters of a Star Wars movie:
+
+    - The first positional argument passed is the Movie ID - example: `3` = `“Return of the Jedi”`
+    - Display one character name per line **in the same order as the “characters” list in the `/films/` endpoint**
+    - You must use the [Star wars API](https://intranet.alxswe.com/rltoken/gh_NaSUk9QlXHVoACFU-tg)
+    - You must use the `request` module
 
 
 # [![BuiltBy](https://img.shields.io/badge/Built-By-GE7A10?style=flat-square&logo=BuzzFeed&logoColor=white)](https://github.com/stephen-nene)

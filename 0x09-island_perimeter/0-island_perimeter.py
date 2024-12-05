@@ -1,23 +1,23 @@
 #!/usr/bin/python3
 """
-The island_perimeter module function
+A module: defines a function that calculates
+the perimeter of an island on a given grid
 """
 
 
 def island_perimeter(grid):
     """
-    returns the perimeter of the island described in grid
+    Returns the perimeter of any notable island in the given grid
     """
+    length = len(grid)
+    breath = len(grid[0])
     perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[e][j] == 1:
-                if i - 1 < 0 or grid[i - 1][j] == 0:
-                    perimeter += 1
-                if j - 1 < 0 or grid[e][j - 1] == 0:
-                    perimeter += 1
-                if j + 1 >= len(grid[i]) or grid[i][j + 1] == 0:
-                    perimeter += 1
-                if i + 1 >= len(grid) or grid[i + 1][j] == 0:
-                    perimeter += 1
+    for x in range(length):
+        for y in range(breath):
+            if grid[x][y] == 1:
+                perimeter += 4
+                if (y < breath - 1 and grid[x][y + 1] == 1):
+                    perimeter -= 2
+                if (x < length - 1 and grid[x + 1][y] == 1):
+                    perimeter -= 2
     return perimeter
